@@ -1,0 +1,20 @@
+{
+  "name": "@logos-os/acp-kernel",
+  "version": "0.1.0",
+  "description": "Reference kernel for the Authority Control Protocol (ACP): signed authority tokens, delegation limits, reserve/commit/rollback, idempotency and human approval for irreversible actions.",
+  "license": "Apache-2.0",
+  "author": "Shubhankar Sharma",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/kernel.test.js dist/test/delegation.test.js dist/test/canonical.test.js",
+    "demo": "npm run build && node dist/examples/demo.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
